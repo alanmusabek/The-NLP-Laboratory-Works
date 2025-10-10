@@ -1,0 +1,3 @@
+
+
+7. Implement the function `` Filter_spam (Message, P_Spam, Spam_vocab, P_HAM, HAM_VOCAB, VOCAB, Alpha = 1) `` `, which will check if the incoming message is` `spam``` 'or` `HAM``````.
