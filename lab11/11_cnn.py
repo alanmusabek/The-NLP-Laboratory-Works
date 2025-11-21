@@ -267,3 +267,21 @@ def plot_images(data_index,cmap="Blues"):
     plt.show()    
 
 plot_images(correct, "Greens")
+plot_images(incorrect, "Reds")
+
+y_cat = model.predict(X_test, batch_size=64)
+y_pred = np.argmax(y_cat,axis=1)
+
+output_file = "submission.csv"
+with open(output_file, 'w') as f :
+    f.write('ImageId,Label\n')
+    for i in range(len(y_pred)) :
+        f.write("".join([str(i+1),',',str(y_pred[i]),'\n']))
+
+y_cat = model_optimal.predict(X_test, batch_size=64)
+y_pred = np.argmax(y_cat,axis=1)
+output_file = "submission_optimal.csv"
+with open(output_file, 'w') as f :
+    f.write('ImageId,Label\n')
+    for i in range(len(y_pred)) :
+        f.write("".join([str(i+1),',',str(y_pred[i]),'\n']))
